@@ -1,8 +1,4 @@
 {
-  pkgs,
-  ...
-}:
-{
   console.keyMap = "fr";
   i18n.defaultLocale = "fr_FR.UTF-8";
   time.timeZone = "Europe/Paris";
@@ -23,18 +19,7 @@
     enable = true;
   };
 
-  programs = {
-    git.enable = true;
-    nano.enable = true;
-    nix-ld.enable = true;
-    vim.enable = true;
-  };
-  environment.systemPackages = with pkgs; [
-    curl
-    gedit
-    stdenv
-    uv
-  ];
+  programs.nix-ld.enable = true;
 
   nix.settings.experimental-features = [
     "nix-command"
