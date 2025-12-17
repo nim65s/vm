@@ -12,7 +12,7 @@
     extraGroups = [ "wheel" ];
     packages = with pkgs; [
       gedit
-      stdenv
+      gcc
       uv
       vim
     ];
