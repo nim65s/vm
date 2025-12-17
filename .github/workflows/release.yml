@@ -1,0 +1,23 @@
+name: Release on GitHub
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    environment: release
+    permissions:
+      id-token: write
+      contents: write
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: nixbuild/nix-quick-install-action@v34
+      - run: echo "TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
+      - run: gh release create -t "Release ${{ env.TAG}}" ${{ env.TAG }} result/*.ova
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
