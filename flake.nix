@@ -36,6 +36,10 @@
               {
                 nix.registry.nixpkgs.flake = inputs.nixpkgs;
                 virtualisation.diskSize = 20 * 1024;
+
+                # Reduce system size for github releases
+                services.speechd.enable = false;
+                # tumbler and gvfs could be good candidates if need be
               }
             ];
           };
