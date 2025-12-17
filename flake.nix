@@ -29,9 +29,7 @@
         {
           devShells.default = pkgs.mkShell {
             packages = with pkgs; [
-              curl
               gedit
-              nano
               uv
               vim
             ];
