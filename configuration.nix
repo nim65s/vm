@@ -1,5 +1,4 @@
 {
-  console.keyMap = "fr";
   i18n.defaultLocale = "fr_FR.UTF-8";
   time.timeZone = "Europe/Paris";
 
@@ -15,11 +14,15 @@
     user = "vm";
   };
   services.xserver = {
-    desktopManager.xfce.enable = true;
     enable = true;
+    xkb.layout = "fr";
+    desktopManager.xfce.enable = true;
   };
 
-  programs.nix-ld.enable = true;
+  programs = {
+    git.enable = true;
+    nix-ld.enable = true;
+  };
 
   nix.settings.experimental-features = [
     "nix-command"

@@ -31,7 +31,6 @@
             packages = with pkgs; [
               curl
               gedit
-              git
               nano
               uv
               vim
