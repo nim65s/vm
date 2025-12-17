@@ -1,4 +1,8 @@
 {
+  pkgs,
+  ...
+}:
+{
   i18n.defaultLocale = "fr_FR.UTF-8";
   time.timeZone = "Europe/Paris";
 
@@ -6,6 +10,12 @@
     isNormalUser = true;
     initialPassword = "vm";
     extraGroups = [ "wheel" ];
+    packages = with pkgs; [
+      gedit
+      stdenv
+      uv
+      vim
+    ];
   };
   security.sudo.wheelNeedsPassword = false;
 

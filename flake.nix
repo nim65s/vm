@@ -27,13 +27,6 @@
       perSystem =
         { pkgs, ... }:
         {
-          devShells.default = pkgs.mkShell {
-            packages = with pkgs; [
-              gedit
-              uv
-              vim
-            ];
-          };
           packages.default = inputs.nixos-generators.nixosGenerate {
             inherit modules system;
             format = "virtualbox";
