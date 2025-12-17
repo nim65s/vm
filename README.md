@@ -1,9 +1,26 @@
-# vm
+# VM
 
-## Build
+Create a VirtualBox VM from the .ova file available on `nix build`
+or on the latest [release](https://github.com/nim65s/vm/releases) of this repo.
 
-`nix build`
+## Use
 
-## Or Download directly before 01/01/2026
+Basic development tools are available, but if you need anything else you can use nix, eg.:
+```
+nix run nixpkgs#vscodium
+```
 
-<https://filesender.renater.fr/?s=download&token=2900ff79-3988-4b74-bf44-b46dd0febb48>
+## Update
+
+Once in the VM, you can get this repo and modify the configuration of the vm to suit your needs:
+
+```
+git clone https://github.com/nim65s/vm
+cd vm
+# edit configuration.nix as you want
+sudo nixos-rebuild switch --flake .
+```
+
+## Fork
+
+To keep your modifications you can fork this repo. By pushing a new tag to your fork, you can use github actions to create your own personalized .ova file
