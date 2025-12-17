@@ -21,7 +21,7 @@
     in
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ system ];
-      flake.nixosConfigurations.vm = inputs.nixpkgs.lib.nixosSystem {
+      flake.nixosConfigurations.nixos = inputs.nixpkgs.lib.nixosSystem {
         inherit modules system;
       };
       perSystem =
