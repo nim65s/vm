@@ -40,7 +40,4 @@
   ];
 
   system.stateVersion = "25.11";
-
-  boot.loader.grub.device = "/dev/sda";
-  fileSystems."/".device = "/dev/sda1";
 }
