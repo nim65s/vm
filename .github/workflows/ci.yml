@@ -17,6 +17,7 @@ jobs:
           ref: ${{ github.ref_name }}
       - uses: nixbuild/nix-quick-install-action@v34
       - run: nix build -L
+      - run: ls -l result/
       - run: echo "TAG=${GITHUB_REF#refs/tags/}" >> $GITHUB_ENV
       - run: gh release create -t "Release ${{ env.TAG}}" ${{ env.TAG }} result/*.ova
         if: startsWith(github.ref, 'refs/tags/v')
