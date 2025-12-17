@@ -23,4 +23,16 @@ sudo nixos-rebuild switch --flake .
 
 ## Fork
 
-To keep your modifications you can fork this repo. By pushing a new tag to your fork, you can use github actions to create your own personalized .ova file
+To keep your modifications you can fork this repo. 
+By pushing a new tag to your fork, you can use github actions to create your own personalized .ova file 
+in the release section of your fork, and be able to create fresh VMs as you want
+
+But beware of the 2.0G size limit for github release assests
+
+## Sync with nixpkgs
+
+To get latest updates from https://github.com/NixOS/nixpkgs/:
+
+```
+nix flake update --commit-lock-file
+```

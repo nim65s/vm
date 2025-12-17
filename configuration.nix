@@ -39,5 +39,6 @@
     "flakes"
   ];
 
+  # Don't edit this after a VM creation
   system.stateVersion = "25.11";
 }
