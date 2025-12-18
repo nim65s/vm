@@ -11,7 +11,9 @@
     initialPassword = "vm";
     extraGroups = [ "wheel" ];
     packages = with pkgs; [
+      btop
       gedit
+      gnumake
       gcc
       uv
       vim
